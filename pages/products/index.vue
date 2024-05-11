@@ -9,10 +9,6 @@
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-  layout: "products",
-});
-
 interface Product {
   id: number;
   title: string;
@@ -22,6 +18,16 @@ interface Product {
 const { data: products } = await useFetch<Product[]>(
   "https://fakestoreapi.com/products"
 );
+
+//! Overwritten global metadata
+useHead({
+  title: "Nuxt Dojo | Merch",
+  meta: [{ name: "description", content: "Nuxt 3 Merch" }],
+});
+
+definePageMeta({
+  layout: "products",
+});
 </script>
 
 <style lang="scss" scoped>

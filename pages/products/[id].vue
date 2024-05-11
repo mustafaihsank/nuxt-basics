@@ -1,5 +1,10 @@
 <template>
   <div>
+    <!--! Overwritten global metadata -->
+    <Head>
+      <Title>Nuxt Dojo | {{ product?.title }}</Title>
+      <Meta name="description" :content="product?.description"></Meta>
+    </Head>
     <ProductDetails :product="product" />
   </div>
 </template>
@@ -8,6 +13,7 @@
 interface Product {
   id: number;
   title: string;
+  description: string;
   price: number;
 }
 
