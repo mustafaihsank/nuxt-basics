@@ -17,6 +17,14 @@
 // });
 
 const { data } = await useFetch("/api/currency/GBP");
+
+if (!data.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: "Currency not found",
+    fatal: true,
+  });
+}
 </script>
 
 <style lang="scss" scoped>
