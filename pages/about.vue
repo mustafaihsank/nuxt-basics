@@ -6,10 +6,18 @@
       voluptates exercitationem. Neque et libero velit at, dolore maxime
       numquam.
     </p>
+    <div>{{ data }}</div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+// const { data } = await useFetch("/api/ninja?name=Mustafa", {
+//   method: "post",
+//   body: { age: 27 },
+// });
+
+const { data } = await useFetch("/api/currency/GBP");
+</script>
 
 <style lang="scss" scoped>
 h2 {
